@@ -1,0 +1,1 @@
+# unityyamlmerge-gitconfig-action
