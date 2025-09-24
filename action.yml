@@ -1,6 +1,6 @@
 name: 'Setup Unity YAML Merge'
 description: 'Sets up Unity YAML Merge as the Git merge tool for Unity projects.'
-author: 'Jules'
+author: 'srz-zumix'
 
 inputs:
   unity-project-path:
