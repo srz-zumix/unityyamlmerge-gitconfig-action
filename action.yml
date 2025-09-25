@@ -15,7 +15,7 @@ runs:
   using: 'composite'
   steps:
     - name: 'Configure git for UnityYAMLMerge'
-      uses: srz-zumix/workspace-git-config-action@v1
+      uses: srz-zumix/workspace-git-config-action@570442590729c901a8d7eb72cac995c4496c4e40 # v1.1.0
       with:
         workspace: ${{ inputs.unity-project-path }}
         configs: |
