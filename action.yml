@@ -1,0 +1,26 @@
+name: 'Setup Unity YAML Merge'
+description: 'Sets up Unity YAML Merge as the Git merge tool for Unity projects.'
+author: 'srz-zumix'
+
+inputs:
+  unity-project-path:
+    description: 'Path to the Unity project directory.'
+    required: false
+    default: '.'
+  unity-yaml-merge-path:
+    description: 'Full path to the UnityYAMLMerge executable.'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Configure git for UnityYAMLMerge'
+      uses: srz-zumix/workspace-git-config-action@v1
+      with:
+        workspace: ${{ inputs.unity-project-path }}
+        configs: |
+          [merge]
+            tool = unityyamlmerge
+          [mergetool "unityyamlmerge"]
+            trustExitCode = false
+            cmd = '${{ inputs.unity-yaml-merge-path }}' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
